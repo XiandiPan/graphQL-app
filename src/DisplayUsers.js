@@ -1,5 +1,5 @@
 import { useQuery, gql } from '@apollo/client';
-import {getUsers,getUserMsg,addUser,addMsg} from './queries';
+import {getUsers} from './queries';
 
 
 

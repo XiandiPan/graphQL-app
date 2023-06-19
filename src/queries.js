@@ -13,17 +13,18 @@ function getUsers(){
 `
 }
 
-function getUserMsg(username){
-
+function getUserMsg(username) {
   return gql`
-  query {
-    user(username: ${username}){
-      messages{
-        id
-        body
+    query {
+      user(username: "${username}") {
+        username
+        messages {
+          id
+          body
+        }
       }
-  }
-  `
+    }
+  `;
 }
 
 function addUser(username, firstName, lastName){
