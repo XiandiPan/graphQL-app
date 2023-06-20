@@ -5,6 +5,7 @@ import UserMessages from "./UserMessages";
 import AddUser from "./AddUser";
 import AddMessage from "./AddMessage";
 import UserMessagesForm from "./UserMessagesForm";
+import AddUserForm from "./AddUserForm";
 
 /**
  * Component for RouteList
@@ -22,7 +23,7 @@ function RouteList() {
       <Route path="/" element={<DisplayUsers />} />
       <Route path="/messages" element={<UserMessagesForm/>}></Route>
       <Route path="/messages/:username" element={<UserMessages/>}></Route>
-      <Route path="/addUser" element={<AddUser  />}/>
+      <Route path="/addUser" element={<AddUserForm  />}/>
       <Route path="/addMessage" element={<AddMessage  />}/>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

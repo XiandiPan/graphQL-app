@@ -27,24 +27,34 @@ function getUserMsg(username) {
   `;
 }
 
-function addUser(username, firstName, lastName){
-  return gql`
-  mutation{
-    createUser(username: ${username}, first_name: ${firstName}, last_name: ${lastName}){
+// function addUser(username, firstName, lastName){
+//   return gql`
+//   mutation {
+//     createUser(username: "${username}", first_name: "${firstName}", last_name: "${lastName}"){
+//       username
+//       first_name
+//       last_name
+//     }
+//   }
+
+//   `
+// }
+
+const ADD_USER = gql`
+  mutation AddUser($username: ID!, $first_name: String!, $last_name: String!) {
+    createUser(username: $username, first_name: $first_name, last_name: $last_name){
       username
       first_name
       last_name
     }
   }
+`;
 
-  `
-
-}
 
 function addMsg(username, msg){
   return gql`
   mutation{
-    createMessage(username: ${username}, body: ${msg}){
+    createMessage(username: "${username}", body:" ${msg}"){
       user{
         username
       }
@@ -54,4 +64,4 @@ function addMsg(username, msg){
 
 }
 
-export {getUsers,getUserMsg,addUser,addMsg}
+export {getUsers,getUserMsg,ADD_USER ,addMsg}
